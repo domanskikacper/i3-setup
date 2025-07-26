@@ -7,7 +7,7 @@ sudo apt install -y xorg xserver-xorg xinit
 sudo apt install -y i3
 
 echo "Instalacja podstawowych narzędzi..."
-sudo apt install -y dmenu ranger xfce4-terminal firefox-esr polybar picom unzip
+sudo apt install -y dmenu ranger xfce4-terminal firefox-esr polybar picom unzip feh
 
 echo "Instalacja lm-sensors i automatyczne wykrywanie..."
 sudo apt install -y lm-sensors
@@ -41,6 +41,9 @@ for dir in "${CONFIG_DIRS[@]}"; do
     cp -r "$SRC_DIR/"* "$DEST_DIR/"
 done
 
+mkdir -p "$HOME/Obrazy/Tapety"
+cp "$SCRIPT_DIR/Wallpapers/city3.jpg" "$HOME/Obrazy/Tapety/"
+
 echo "Instalacja czcionki JetBrainsMono Nerd Font..."
 mkdir -p ~/.local/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip -O /tmp/JetBrainsMono.zip
@@ -48,7 +51,8 @@ unzip -o /tmp/JetBrainsMono.zip -d ~/.local/share/fonts/JetBrainsMono
 fc-cache -fv
 rm /tmp/JetBrainsMono.zip
 
-echo "Nadawanie uprawnień do skryptów polybar..."
+echo "Nadawanie uprawnień do skryptów..."
+chmod +x "$HOME/.config/polybar/launch.sh"
 chmod +x "$HOME/.config/polybar/scripts/cpu.sh"
 chmod +x "$HOME/.config/polybar/scripts/ram.sh"
 chmod +x "$HOME/.config/polybar/scripts/temp.sh"
