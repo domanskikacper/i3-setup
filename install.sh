@@ -7,7 +7,7 @@ sudo apt install -y xorg xserver-xorg xinit
 sudo apt install -y i3
 
 echo "Instalacja podstawowych narzędzi..."
-sudo apt install -y dmenu ranger xfce4-terminal firefox-esr polybar picom unzip
+sudo apt install -y dmenu ranger xfce4-terminal firefox-esr polybar picom
 
 echo "Instalacja lm-sensors i automatyczne wykrywanie..."
 sudo apt install -y lm-sensors
@@ -38,7 +38,7 @@ for dir in "${CONFIG_DIRS[@]}"; do
     SRC_DIR="$SCRIPT_DIR/$dir"
     DEST_DIR="$HOME/.config/$dir"
     mkdir -p "$DEST_DIR"
-    cp -r "$SRC_DIR/" "$DEST_DIR/"
+    cp -r "$SRC_DIR/"* "$DEST_DIR/"
 done
 
 echo "Instalacja czcionki JetBrainsMono Nerd Font..."
