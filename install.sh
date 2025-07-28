@@ -56,5 +56,6 @@ chmod +x "$HOME/.config/polybar/launch.sh"
 chmod +x "$HOME/.config/polybar/scripts/cpu.sh"
 chmod +x "$HOME/.config/polybar/scripts/ram.sh"
 chmod +x "$HOME/.config/polybar/scripts/temp.sh"
+chmod +x "$HOME/.config/polybar/scripts/wifi_status.sh"
 
 echo "Instalacja zakończona pomyślnie!"
