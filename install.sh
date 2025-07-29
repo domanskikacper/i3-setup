@@ -7,7 +7,7 @@ sudo apt install -y xorg xserver-xorg xinit
 sudo apt install -y i3
 
 echo "Instalacja podstawowych narzędzi..."
-sudo apt install -y dmenu ranger xfce4-terminal firefox-esr polybar picom unzip feh pulseaudio network-manager
+sudo apt install -y dmenu ranger xfce4-terminal firefox-esr polybar picom unzip feh pulseaudio network-manager neovim
 
 echo "Instalacja lm-sensors i automatyczne wykrywanie..."
 sudo apt install -y lm-sensors
