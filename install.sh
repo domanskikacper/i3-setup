@@ -9,6 +9,10 @@ sudo apt install -y i3
 echo "Instalacja podstawowych narzędzi..."
 sudo apt install -y rofi ranger xfce4-terminal firefox-esr polybar picom unzip feh pulseaudio network-manager neovim mesa-utils curl
 
+echo "Instalacja vim-plug..."
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 echo "Instalacja lm-sensors i automatyczne wykrywanie..."
 sudo apt install -y lm-sensors
 yes | sudo sensors-detect
@@ -32,7 +36,7 @@ fi
 
 echo "Kopiowanie konfiguracji i3, picom, polybar, xfce4..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIG_DIRS=("i3" "picom" "polybar" "xfce4" "rofi")
+CONFIG_DIRS=("i3" "picom" "polybar" "xfce4" "rofi" "nvim")
 
 for dir in "${CONFIG_DIRS[@]}"; do
     SRC_DIR="$SCRIPT_DIR/$dir"
