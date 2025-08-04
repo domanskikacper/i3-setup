@@ -7,7 +7,7 @@ sudo apt install -y xorg xserver-xorg xinit
 sudo apt install -y i3
 
 echo "Instalacja podstawowych narzędzi..."
-sudo apt install -y dmenu ranger xfce4-terminal firefox-esr polybar picom unzip feh pulseaudio network-manager neovim mesa-utils curl
+sudo apt install -y rofi ranger xfce4-terminal firefox-esr polybar picom unzip feh pulseaudio network-manager neovim mesa-utils curl
 
 echo "Instalacja lm-sensors i automatyczne wykrywanie..."
 sudo apt install -y lm-sensors
@@ -32,7 +32,7 @@ fi
 
 echo "Kopiowanie konfiguracji i3, picom, polybar, xfce4..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIG_DIRS=("i3" "picom" "polybar" "xfce4")
+CONFIG_DIRS=("i3" "picom" "polybar" "xfce4" "rofi")
 
 for dir in "${CONFIG_DIRS[@]}"; do
     SRC_DIR="$SCRIPT_DIR/$dir"
