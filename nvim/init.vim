@@ -17,8 +17,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-syntastic/syntastic' " Linter
 Plug 'vim-airline/vim-airline' " Pasek statusu
 Plug 'preservim/nerdtree'      " File explorer
+Plug 'windwp/nvim-autopairs'
 
 call plug#end()
+
+lua << EOF
+require('nvim-autopairs').setup{}
+EOF
 
 " === Skróty klawiszowe ===
 nnoremap <C-n> :NERDTreeToggle<CR>
